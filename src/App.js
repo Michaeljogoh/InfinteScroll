@@ -1,10 +1,17 @@
 
 import InfiniteScroll from './component/Scroll';
+import './App.css'
 
 function App() {
   return (
-   <InfiniteScroll/>
+    <div className='App'>
+ <InfiniteScroll/>
+    </div>
+  
   );
 }
 
 export default App;
+
+
+

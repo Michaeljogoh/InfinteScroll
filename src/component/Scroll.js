@@ -1,28 +1,19 @@
+ import React, { useEffect, useState, useRef  } from 'react';
+ import '../App.css'
+import Hello from '../image/hello.jpg'
+import bring from '../image/bring.jpg'
+import fence from '../image/fence.jpg'
+import enlight from '../image/enlight.jpg'
+import eco from '../image/eco.jpg'
+import home from '../image/home.jpg'
 
-  import React, { useEffect, useState, useRef  } from 'react';
-
-
-const divStyle = {
-    color: 'blue',
-    height: '250px',
-    textAlign: 'center',
-    padding: '5px 10px',
-    background: '#eee',
-    marginTop: '15px'
-};
-
-
-const containerStyle = {
-    maxWidth: '1280px',
-    margin: '0 auto',
-}
 
 
 
 
  
 const InfiniteScroll = () => {
-    const [postList, setPostList] = useState({list: [1,2,3,4]}); 
+    const [postList, setPostList] = useState({list: [Hello , bring , fence, enlight, eco, home]}); 
     // tracking on which page we currently are
     const [page, setPage] = useState(1);
     // add loader refrence 
@@ -46,7 +37,7 @@ const InfiniteScroll = () => {
 
     useEffect(() => {
         // here we simulate adding new posts to List
-        const newList = postList.list.concat([2,7,9]);
+        const newList = postList.list.concat([Hello, bring, fence, enlight, eco, home]);
         setPostList({
             list: newList
         })
@@ -63,17 +54,23 @@ const InfiniteScroll = () => {
 
 
     return (
-        <div className="container" style={containerStyle}>
+        <div className="container">
+
         <div className="post-list">
-            {
+
+     {
                 postList.list.map((post, index) => {
-                return (<div key={index} className="post" style={divStyle}>
-                    <h2> {post } </h2>
+                return (<div key={index} className="post">
+                    <img src={post} />
+                <h2>{post}</h2>
+              
+                    
                     </div>
             )
             })
-            }
-        
+ }
+
+   
             <div className="loading" ref={loader}>
                     <h2>Load More</h2>
            </div>
