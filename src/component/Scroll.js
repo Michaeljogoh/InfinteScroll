@@ -1,11 +1,11 @@
  import React, { useEffect, useState, useRef  } from 'react';
  import '../App.css'
-import Hello from '../image/hello.jpg'
-import bring from '../image/bring.jpg'
-import fence from '../image/fence.jpg'
-import enlight from '../image/enlight.jpg'
-import eco from '../image/eco.jpg'
-import home from '../image/home.jpg'
+import david from '../image/david.jpg'
+import faith from '../image/faith.jpg'
+import aaron from '../image/aaron.jpg'
+import james from '../image/james.jpg'
+import version from '../image/version.jpg'
+import olivia from '../image/olivia.jpg'
 
 
 
@@ -15,12 +15,12 @@ import home from '../image/home.jpg'
 const InfiniteScroll = () => {
     const [postList, setPostList] = useState({list: [
         
-             {image:Hello , text: "1 : Martins"} , 
-            {image:bring  ,text: " 2 : Mark"}, 
-            {image:fence ,text: " 3 : Aaron"}, 
-            {image:enlight, text: " 4 : Peter"}, 
-            {image: eco, text:" 5 : Chris"}, 
-            {image:home, text:'6 : Tiana'}
+            {image:david, text: "1 : David"} , 
+            {image:faith ,text: "2 : Faith"}, 
+            {image:aaron ,text: "3 : Aaron"}, 
+            {image:james, text: "4 : James"}, 
+            {image:version, text:"5 : Version"}, 
+            {image:olivia, text:'6 : Olivia '}
     
  ]}); 
     // tracking on which page we currently are
@@ -47,12 +47,13 @@ const InfiniteScroll = () => {
     useEffect(() => {
         // here we simulate adding new posts to List
         const newList = postList.list.concat([
-            {image:Hello , text: " 1 : Martins"} , 
-            {image:bring  ,text: " 2 : Mark"}, 
-            {image:fence ,text: " 3 : Aaron"}, 
-            {image:enlight, text: " 4 : Peter"}, 
-            {image: eco, text:" 5 : Chris"}, 
-            {image:home, text:'6 : Tiana'}
+            {image:david, text: "1 : David"} , 
+            {image:faith ,text: " 2 : Faith"}, 
+            {image:aaron ,text: " 3 : Aaron"}, 
+            {image:james, text: " 4 : James"}, 
+            {image: version, text:" 5 : Version"}, 
+            {image: olivia, text:'6 : Olivia '}
+           
         ]);
         setPostList({
             list: newList
