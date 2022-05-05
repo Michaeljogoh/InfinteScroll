@@ -13,7 +13,16 @@ import home from '../image/home.jpg'
 
  
 const InfiniteScroll = () => {
-    const [postList, setPostList] = useState({list: [Hello , bring , fence, enlight, eco, home]}); 
+    const [postList, setPostList] = useState({list: [
+        
+             {image:Hello , text: "1 : Martins"} , 
+            {image:bring  ,text: " 2 : Mark"}, 
+            {image:fence ,text: " 3 : Aaron"}, 
+            {image:enlight, text: " 4 : Peter"}, 
+            {image: eco, text:" 5 : Chris"}, 
+            {image:home, text:'6 : Tiana'}
+    
+ ]}); 
     // tracking on which page we currently are
     const [page, setPage] = useState(1);
     // add loader refrence 
@@ -37,7 +46,14 @@ const InfiniteScroll = () => {
 
     useEffect(() => {
         // here we simulate adding new posts to List
-        const newList = postList.list.concat([Hello, bring, fence, enlight, eco, home]);
+        const newList = postList.list.concat([
+            {image:Hello , text: " 1 : Martins"} , 
+            {image:bring  ,text: " 2 : Mark"}, 
+            {image:fence ,text: " 3 : Aaron"}, 
+            {image:enlight, text: " 4 : Peter"}, 
+            {image: eco, text:" 5 : Chris"}, 
+            {image:home, text:'6 : Tiana'}
+        ]);
         setPostList({
             list: newList
         })
@@ -55,14 +71,20 @@ const InfiniteScroll = () => {
 
     return (
         <div className="container">
+              <div className='header'>
+                InfiniteScroll
+            </div>
+           
 
         <div className="post-list">
 
      {
                 postList.list.map((post, index) => {
                 return (<div key={index} className="post">
-                    <img src={post} />
-                <h2>{post}</h2>
+                    <img src={post.image} />
+                <div className='header'>
+                {post.text}
+            </div>
               
                     
                     </div>
