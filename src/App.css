@@ -45,6 +45,15 @@
   text-align: center;
 }
 
+@media(max-width: 430px ){
+  .post img  {
+   height: 200px;
+   width:80%;
+  
+  }
+
+}
+
 
 
 
